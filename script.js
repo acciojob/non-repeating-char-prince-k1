@@ -1,18 +1,20 @@
 function firstNonRepeatedChar(str) {
  // Write your code here
-	let arr = str.split('');
-let result = null;
-
-for(let i = 1; i < arr.length-1; i++){
-    if(arr[i] != arr[i+1] && arr[i] != arr[i-1]){
-      result = arr[i];
-      return arr[i];
-    }
+let arr = str.split('');
+      
+   
+        for(let i = 0; i < arr.length; i++){
+            let sum = 0;
+            for(let j = i+1; j < arr.length; j++){
+                if(arr[i] == arr[j]){
+                    sum++;
+                }
+            }
+            if(sum == 0){
+                return arr[i];
+            }
+        }
+	return null;
 }
-	if(arr[arr.length-1] != arr[arr.length-2]){
-		return arr[arr.length-1];
-	}
-	return result;
-}
-const input = prompt("Enter a string");
-alert(firstNonRepeatedChar(input)); 
+// const input = prompt("Enter a string");
+// alert(firstNonRepeatedChar(input)); 
